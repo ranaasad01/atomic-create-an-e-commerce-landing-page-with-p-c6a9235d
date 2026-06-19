@@ -385,7 +385,7 @@ export default function HomePage() {
           >
             {/* Eyebrow */}
             <motion.div variants={fadeInUp}>
-              <span className="inline-flex items-center gap-2 px-4 py-2 bg-black text-white text-sm font-medium rounded-full">
+              <span className="inline-flex items-center gap-2 px-4 py-2 bg-black text-white text-sm font-medium rounded-full" style={{ color: "#ed2626", backgroundColor: "#000000" }}>
                 <Sparkles className="w-4 h-4" />
                 New Season Collection
               </span>
