@@ -80,8 +80,8 @@ export default function Footer() {
           {/* Brand Column */}
           <motion.div variants={fadeInUp} className="lg:col-span-2">
             <Link href="/" className="flex items-center gap-2 mb-4 group">
-              <div className="w-8 h-8 bg-gradient-to-br from-violet-500 to-violet-700 rounded-lg flex items-center justify-center">
-                <Sparkles className="w-4 h-4 text-white" />
+              <div className="w-8 h-8 bg-white rounded-lg flex items-center justify-center">
+                <Sparkles className="w-4 h-4 text-black" />
               </div>
               <span className="text-xl font-bold text-white">{APP_NAME}</span>
             </Link>
@@ -98,7 +98,7 @@ export default function Footer() {
                   aria-label={label}
                   whileHover={{ scale: 1.1, y: -2 }}
                   whileTap={{ scale: 0.95 }}
-                  className="w-9 h-9 bg-slate-800 hover:bg-violet-600 rounded-lg flex items-center justify-center transition-colors duration-200"
+                  className="w-9 h-9 bg-slate-800 hover:bg-slate-600 rounded-lg flex items-center justify-center transition-colors duration-200 hover:text-white"
                 >
                   <Icon className="w-4 h-4" />
                 </motion.a>
@@ -118,7 +118,7 @@ export default function Footer() {
                     <Link
                       href={getLinkHref(link.href)}
                       onClick={(e) => handleAnchorClick(e, link.href)}
-                      className="text-slate-400 hover:text-violet-400 text-sm transition-colors duration-200"
+                      className="text-sm text-slate-400 hover:text-white transition-colors duration-200"
                     >
                       {link.label}
                     </Link>
@@ -130,30 +130,57 @@ export default function Footer() {
         </div>
       </motion.div>
 
+      {/* Newsletter Strip */}
+      <div className="border-t border-slate-800">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+          <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
+            <div>
+              <p className="text-white font-semibold">Stay in the loop</p>
+              <p className="text-slate-400 text-sm">Get the latest drops and exclusive offers.</p>
+            </div>
+            <form
+              onSubmit={(e) => e.preventDefault()}
+              className="flex gap-2 w-full sm:w-auto"
+            >
+              <input
+                type="email"
+                placeholder="your@email.com"
+                className="flex-1 sm:w-64 px-4 py-2 rounded-lg bg-slate-800 border border-slate-700 text-white placeholder-slate-500 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:border-transparent transition"
+              />
+              <button
+                type="submit"
+                className="px-5 py-2 bg-white hover:bg-gray-200 text-black text-sm font-semibold rounded-lg transition-colors duration-200 whitespace-nowrap"
+              >
+                Subscribe
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+
       {/* Bottom Bar */}
       <div className="border-t border-slate-800">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p className="text-slate-500 text-sm">
-            © {new Date().getFullYear()} {APP_NAME}. All rights reserved.
-          </p>
-          <p className="text-slate-500 text-sm flex items-center gap-1">
-            Made with{" "}
-            <Heart className="w-3.5 h-3.5 text-violet-500 fill-violet-500" />{" "}
-            for great shopping
-          </p>
-          <div className="flex items-center gap-4">
-            <Link
-              href="#"
-              className="text-slate-500 hover:text-slate-300 text-sm transition-colors duration-200"
-            >
-              Privacy Policy
-            </Link>
-            <Link
-              href="#"
-              className="text-slate-500 hover:text-slate-300 text-sm transition-colors duration-200"
-            >
-              Terms of Service
-            </Link>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+          <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
+            <p className="text-slate-500 text-sm">
+              © {new Date().getFullYear()} {APP_NAME}. All rights reserved.
+            </p>
+            <div className="flex items-center gap-1 text-slate-500 text-sm">
+              <span>Made with</span>
+              <Heart className="w-3.5 h-3.5 text-white fill-white mx-0.5" />
+              <span>for great shopping</span>
+            </div>
+            <div className="flex items-center gap-4">
+              {["Privacy Policy", "Terms of Service", "Cookie Policy"].map((item) => (
+                <Link
+                  key={item}
+                  href="#"
+                  className="text-slate-500 hover:text-white text-sm transition-colors duration-200"
+                >
+                  {item}
+                </Link>
+              ))}
+            </div>
           </div>
         </div>
       </div>
