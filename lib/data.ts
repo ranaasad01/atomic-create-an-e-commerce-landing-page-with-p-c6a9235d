@@ -1,4 +1,4 @@
-export const APP_NAME = "Lumière";
+export const APP_NAME = "Amazon";
 export const APP_TAGLINE = "Curated for the discerning eye.";
 
 export interface NavLink {
