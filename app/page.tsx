@@ -52,7 +52,7 @@ const PRODUCTS: ProductItem[] = [
     price: 189,
     rating: 4.8,
     reviewCount: 632,
-    image: "https://maisoncashmere.com/cdn/shop/files/wrap-cashmere-silk-positano-883_60-28-1_ce005d6a-00f9-4849-844a-480369dd8f99.webp?v=1776182098&width=1024",
+    image: "https://titoaistorageaccount.blob.core.windows.net/titoai-storage/assets/c6a9235d-870c-4b10-9a15-68a5515cabdd/698f2a9880554f75a1f01ee9bb038140.png",
     badge: "New",
     isNew: true,
     description: "Ethically sourced, impossibly soft.",
@@ -525,6 +525,7 @@ export default function HomePage() {
             <motion.p
               variants={fadeInUp}
               className="text-sm font-semibold text-black uppercase tracking-widest mb-3"
+            style={{ fontFamily: "ui-sans-serif", fontSize: "20px" }}
             >
               Our Collection
             </motion.p>
